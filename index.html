@@ -47,10 +47,11 @@ body {font-family: Arial;}
 <body>
 <h2>Ameer Ghouse</h2>
 <div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'About Me')"  id="defaultOpen">About me</button>
+  <button class="tablinks" onclick="openTab(event, 'Work')">Work</button>
   <button class="tablinks" onclick="openTab(event, 'Fun')">Fun</button>
   <button class="tablinks" onclick="openTab(event, 'Publications')">Publications</button>
   <button class="tablinks" onclick="openTab(event, 'CV')">CV</button>
+  <button class="tablinks" onclick="openTab(event, 'About Me')"  id="defaultOpen">About me</button>
 </div>
 
 <div id="CV" class="tabcontent">
@@ -60,12 +61,120 @@ body {font-family: Arial;}
 	<embed src="CVs/AGCV.pdf" width="800px" height="2100px" />
 </div>
 
+<div id="Work" class="tabcontent">
+<h3>Work</h3>
+<p>
+    This will be mostly giving a short summary of some of my publications and
+    some conference papers I'm writing. I have a lot of other work in the
+    pipeline to be published soon. This will update as they get published.
+</p>
+<ul>
+    <li> <p>
+    My latest publication <a
+    href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.064208">(Ghouse
+            2022, Physical Review E)</a> is about using
+    Gaussian processes to infer directionality of coupled physical systems using
+    the principles of convergent cross-mapping (CCM--Sugihara et al 2012, Science). The
+    main idea, as illustrated in (Sugihara et al 2012, Science) is that delay-coordinate
+    maps on a single variable time series are diffeomorphic (gradient preserving) to the original
+    system. This should imply that if we reconstruct phase spaces using
+    delay-coordinates from two different time series, we should see information
+    of putative (causal) variables retrievable in the phase space reconstructed
+    from the caused variable. On the other hand, all information of the caused
+    variable may not be able to be retrieved from a phase space reconstructed
+    from a time series reconstructed from the putative variable.</p>
+    <p>
+    My contribution is to place a probability distribution on each point in the
+    phase space. Doing that, we can construct likelihood ratio tests, similar to
+    what you may see in a discriminant analysis test, to infer the most likely
+    direction of coupling between these two a priori assumed coupled variables
+    we observe through some measured time series. More concretely, we assume the
+    phase space reconstructed from a time series is a realization of a Gaussian
+    process with an a priori mean and covariance function. Determining point
+    estimates of parameters of the a prior functions from a maximum marginal
+    likelihood optimization, we can then determine the a posteriori likelihood
+    of a phase space reconstructed from a variable  we're testing to
+    see is causing the variable that optimized the gaussian process mean and
+    covariance functions.
+    </p>
+    <li>
+    <p> My conference submission to the Organization of Human Brain
+    mapping concerns using multivoxel pattern analysis on cortical surface
+    reconstructions to decode neural representations of tasting when there is a
+    nutrition claim. Food claims in general have a large literature of research,
+    most famously the Coke vs. Pepsi paper (McClure et al 2004, Neuron), where
+    it was found that preferences can be decoded particularly in the
+    ventromedial prefrontal cortex. Furthermore, the neural food valuation is
+    modified by nutrition claims, i.e. what is told to the consumer about the
+    food (Enax and Weber 2017, JAFIO).
+    </p>
+    <p>
+    My main curiosity, personally, is how the active sensory experience is
+    modulated by the fact that there's a nutrition claim. To be honest, the
+    fact that the general sensory experience can be impacted by the stories we tell
+    ourselves, or the stories we hear is curious. Particularly, it's
+    fascinating to think that there's an intrinsic coupling between what our expectations
+    of a sensation may be and the sensation itself. It kind of gives some
+    credence to the mind over matter mantra. Though, of course I'd not claim
+    that at an absolute.
+    </p>
+    <p>
+    Another thing that was fun was learning about very advanced methodology used
+    in functional magnetic resonance imaging (fMRI) analysis. For example, the
+    decoding analysis pipeline, constructing classifiers and exploring the size
+    of radii and their effect at uncovering neural representations, i.e. the
+    spatial scale of local neural codes, was a fun foray of
+    research. Furthermore, understanding the process of cortical surface
+    reconstruction was pretty fun too. How different matters were
+    segmented and mapped to an inflated surface, and how to standardize results
+    over varying anatomical surfaces, was cool.
+    </p>
+    <li>
+    <p>
+    My first "first author" publication
+    <a href="https://www.liebertpub.com/doi/10.1089/neu.2019.6965?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed">(Fischer, Ghouse et al 2020, Journal of Neurotrauma)</a>
+    was effectively my master's thesis work
+    to develop a machine learning model that uses the methodology we used in our
+    laboratory back in Barcelona--i.e. diffuse correlation spectroscopy
+    (DCS)--to predict intracranial pressure. The skull can be seen as an
+    incompressible box that can only be consumed by brain matter, blood, and
+    cerebral spinal fluid. Brain is a constant, and as intracranial pressure
+    changes, that means either one of blood of cerebral spinal fluid increased
+    (Monroe-Kelly doctrine). This is especially important to monitor during a
+    brain injury, or for hydrocephalus, where swelling may occur due to an
+    increase of cerebral spinal fluid for example. This could impair perfusion
+    of blood oxygen to tissue, given by the important formula CPP = MAP- ICP,
+    where the perfusion pressure (CPP) would decrease as intracranial pressure
+    (ICP) increases and mean arterial pressure (MAP) stays the same. My solution
+    was effectively to make a recurrent neural network that takes standardized
+    blood flow time series observed by DCS in the frontal regions of the head
+    to analyze the time dynamics of the signals in order to see if it can be
+    mapped to invasive intracranial pressures. Though the original goal was to
+    classify severity levels of ICP (low, medium, high), we found that we were able to
+    determine absolute pressure, which was fascinating. Even if absolute
+    pressure were unreliable, at least being able to determine dynamical features like
+    intracranial pressure waves can provide the neurotrauma doctors important
+    information on the health of the patient!
+    </p>
+    <li>
+    <p>My first paper I published in my PhD <a
+    href="https://www.mdpi.com/1099-4300/22/7/761">(Ghouse et al 2020,
+            Entropy)</a> was an
+    analysis of various entropy analyses in reconstructed phase spaces to see if
+    it added any additional information in nonparametric
+    statistical rank analysis for uncovering neural correlates from fNIRS. To be honest, it was a
+    very introductory work to get me up to speed with the foundations of my PhD
+    work. </p>
+
+</ul>
+</div>
+
 <div id="About Me" class="tabcontent">
   <h3>About me</h3>
 
   <p><i>"I want inside this night that is longer than life. I want, inside this
   night, life raw and bloody and full of saliva. I want this word: splendidness,
-  splendidness is the fruit of succulence, fruit without sadness. I want
+  splendidness is the fruit in its succulence, fruit without sadness. I want
   distances. My wild intuition about myself. But my main thing is always hidden.
   I am implicit. And when I make myself explicit I lose the humid intimacy." </i>--
   Clarice Lispector, Agua Viva</p>
@@ -77,7 +186,7 @@ body {font-family: Arial;}
   and physics in general. </p>
 
   <p>When I'm not doing that, you can find me writing poetry, playing my guitar or
-  learning a new instrument, learning and creating audiovisual arts, and reading
+  learning a new instrument, learning and creating audiovisual arts, or reading
   books.
   </p> 
   <img height=260px alt="" src="ProfPic.png"/>
@@ -89,7 +198,13 @@ body {font-family: Arial;}
   <li>You can see some shader projects I work on <a href="https://github.com/lemiceterieux/shaders/">here</a>. I am using Kodelife to
   kind of fast prototype all my raymarching shenanigans
   <li> I have some poetry I wrote written here. 
-  <li> Some guitar pieces I've composed can be found here. 
+  <ul>
+    <li> <a href="Poetry/Ballerina.txt">Ballerina</a>
+    <li> <a href="Poetry/Water.txt">When my heels held ocean waves</a>
+    <li> <a href="Poetry/SeaMountain.txt">A warm embrace among frigid sweets</a>
+    <li> <a href="Poetry/Pigeons.txt">Pigeons</a>
+  </ul>
+  <li> I'll upload some music pieces I wrote eventually 
   </ul>
 </div>
 
